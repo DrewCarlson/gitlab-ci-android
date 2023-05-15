@@ -7,7 +7,6 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   docker:
@@ -20,7 +19,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            jangrewe/gitlab-ci-android
+            drewcarlson/gitlab-ci-android
           tags: |
             type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'master') }}
             type=raw,value={{tag}}
